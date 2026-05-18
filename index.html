@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>734m Shop Uganda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <a class="brand" href="#">
+          <span class="brand-mark">7</span>
+          <span>734m Shop</span>
+        </a>
+
+        <button class="cart-toggle" id="cart-toggle" type="button" aria-label="Open shopping cart">
+          Cart
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+      </nav>
+
+      <div class="hero-copy">
+        <p class="eyebrow">Uganda Online Shop</p>
+        <h1>Shop everyday essentials with prices in Ugandan shillings.</h1>
+        <p class="hero-text">
+          Allow easy online shopping for Ugandans and the rest of the world with easy payment methods.
+        </p>
+
+        <div class="hero-stats">
+          <div>
+            <strong id="product-total">0</strong>
+            <span>Products live</span>
+          </div>
+          <div>
+            <strong>KLA</strong>
+            <span>Kampala same-day support</span>
+          </div>
+          <div>
+            <strong>UGX 250K</strong>
+            <span>Free delivery threshold</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="store-layout">
+      <aside class="shop-sidebar">
+        <section class="sidebar-card">
+          <p class="eyebrow">My Account</p>
+          <h2>Quick access</h2>
+          <div class="sidebar-list account-links" id="account-links">
+            <button class="sidebar-link account-link active" type="button" data-account-view="orders">Orders</button>
+            <button class="sidebar-link account-link" type="button" data-account-view="reviews">Pending Reviews</button>
+            <button class="sidebar-link account-link" type="button" data-account-view="wishlist">Wishlist</button>
+            <button class="sidebar-link account-link" type="button" data-account-view="vouchers">Vouchers</button>
+          </div>
+          <div class="account-panel" id="account-panel" aria-live="polite"></div>
+        </section>
+
+        <section class="sidebar-card">
+          <p class="eyebrow">Categories</p>
+          <h2>Browse departments</h2>
+          <div class="category-filters sidebar-list" id="category-filters" aria-label="Product categories"></div>
+        </section>
+
+        <section class="sidebar-card">
+          <p class="eyebrow">Services</p>
+          <h2>Order your way</h2>
+          <div class="service-stack">
+            <a class="service-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=oderoelijah38@gmail.com" target="_blank" rel="noopener">Email orders</a>
+            <a class="service-link" href="https://wa.me/254105883177" target="_blank" rel="noopener">WhatsApp orders</a>
+            <div class="service-copy">
+              <strong>Delivery support</strong>
+              <span>Across Kampala and upcountry on arrangement.</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="sidebar-card">
+          <p class="eyebrow">Sign In</p>
+          <h2>Use your email</h2>
+          <form class="sign-in-form" id="sign-in-form">
+            <label class="search-field sign-in-field" for="email-input">
+              <span>Email address</span>
+              <input id="email-input" type="email" placeholder="you@example.com" autocomplete="email" required>
+            </label>
+            <button class="primary-btn sign-in-btn" id="sign-in-btn" type="submit">Sign in</button>
+            <p class="sign-in-status" id="sign-in-status">Not signed in yet.</p>
+          </form>
+        </section>
+
+        <section class="sidebar-card">
+          <p class="eyebrow">Admin Studio</p>
+          <h2>Manage product images</h2>
+          <form class="admin-form" id="admin-image-form">
+            <label class="search-field admin-field" for="admin-product-select">
+              <span>Choose product</span>
+              <select id="admin-product-select" required></select>
+            </label>
+
+            <div class="admin-preview">
+              <div class="admin-preview-media">
+                <img id="admin-preview-image" src="" alt="" loading="lazy" decoding="async">
+              </div>
+              <div class="admin-preview-copy">
+                <strong id="admin-product-name">Select a product</strong>
+                <span id="admin-preview-note">The current image will show here.</span>
+              </div>
+            </div>
+
+            <label class="search-field admin-field" for="admin-image-url">
+              <span>New image URL</span>
+              <input id="admin-image-url" type="url" placeholder="https://example.com/product-image.jpg" inputmode="url">
+            </label>
+
+            <label class="search-field admin-field" for="admin-image-file">
+              <span>Or upload an image</span>
+              <input id="admin-image-file" type="file" accept="image/*">
+            </label>
+
+            <div class="admin-actions">
+              <button class="primary-btn" id="admin-save-image-btn" type="submit">Save image</button>
+              <button class="secondary-btn" id="admin-reset-image-btn" type="button">Reset image</button>
+            </div>
+
+            <p class="admin-status" id="admin-image-status">Admin changes are saved in this browser on this device.</p>
+          </form>
+        </section>
+      </aside>
+
+      <section class="catalog">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Catalog</p>
+            <h2>Featured products</h2>
+          </div>
+          <p class="results" id="results-count">0 products</p>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-field" for="search-input">
+            <span>Search</span>
+            <input id="search-input" type="search" placeholder="Search products in Uganda">
+          </label>
+
+          <div class="selected-category">
+            <span class="selected-label">Selected</span>
+            <strong id="selected-category">All categories</strong>
+          </div>
+        </div>
+
+        <div class="product-grid" id="product-grid"></div>
+      </section>
+
+      <aside class="cart-panel" id="cart-panel" aria-labelledby="cart-heading">
+        <div class="cart-panel-head">
+          <div>
+            <p class="eyebrow">Your bag</p>
+            <h2 id="cart-heading">Shopping cart</h2>
+          </div>
+
+          <button class="cart-close" id="cart-close" type="button" aria-label="Close shopping cart">
+            Close
+          </button>
+        </div>
+
+        <div class="cart-items" id="cart-items"></div>
+
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="subtotal">UGX 0</strong>
+          </div>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <strong id="shipping">UGX 0</strong>
+          </div>
+          <div class="summary-row total-row">
+            <span>Total</span>
+            <strong id="total">UGX 0</strong>
+          </div>
+
+          <div class="cart-actions">
+            <button class="secondary-btn" id="clear-cart" type="button">Clear cart</button>
+            <button class="primary-btn" id="email-order-btn" type="button">Email</button>
+            <button class="whatsapp-btn" id="whatsapp-order-btn" type="button">WhatsApp</button>
+          </div>
+          <p class="cart-status" id="cart-status" role="status" aria-live="polite"></p>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <div class="cart-overlay" id="cart-overlay" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
